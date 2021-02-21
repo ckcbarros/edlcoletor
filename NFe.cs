@@ -16,6 +16,7 @@ namespace EDL
         private Symbol.Barcode.ReaderData MyReaderData = null;
 		
 		public const string PASTA_LOG2 = "LOG";	
+		public const string PASTA_LOG3 = "LOG";	
 		
         private System.EventHandler MyEventHandler = null;
 
