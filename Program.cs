@@ -15,7 +15,8 @@ namespace EDL
 
         public const string PASTA_LOG = "LOG";
         public const string ARQUIVO_CONFIGURACAO = "Configuracao.xml";
-
+		public const string PASTA_LOG2 = "LOG";	
+		
         #endregion
 
         #region Mudança de cores dos controles
