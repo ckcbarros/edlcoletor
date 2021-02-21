@@ -16,6 +16,7 @@ namespace EDL
         public const string PASTA_LOG = "LOG";
         public const string ARQUIVO_CONFIGURACAO = "Configuracao.xml";
 		public const string PASTA_LOG2 = "LOG";	
+		public const string PASTA_LOG3 = "LOG";	
 		
         #endregion
 

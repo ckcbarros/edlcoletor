@@ -14,7 +14,9 @@ namespace EDL
     {
         private Symbol.Barcode.Reader MyReader = null;
         private Symbol.Barcode.ReaderData MyReaderData = null;
-
+		
+		public const string PASTA_LOG2 = "LOG";	
+		
         private System.EventHandler MyEventHandler = null;
 
         public NFe()
