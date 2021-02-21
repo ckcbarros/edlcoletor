@@ -1,0 +1,1426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VerificaConexao">
+        <s:complexType />
+      </s:element>
+      <s:element name="VerificaConexaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificaConexaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaVersaoEDLColetor">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetornaVersaoEDLColetorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaVersaoEDLColetorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaVersaoEDLAtualizaVersao">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetornaVersaoEDLAtualizaVersaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaVersaoEDLAtualizaVersaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviaAtualizadorNovo">
+        <s:complexType />
+      </s:element>
+      <s:element name="EnviaAtualizadorNovoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnviaAtualizadorNovoResult" type="tns:VersaoEDL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VersaoEDL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Aplicativo" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tamanho" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogRecusaSemNFe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipoRecebimento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="filial" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fornecedor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="notaFiscal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="serie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogRecusaSemNFeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogRecusaSemNFeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogRecusaNFe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipoRecebimento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="filial" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="chaveAcesso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogRecusaNFeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogRecusaNFeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraRomaneioPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nota" type="tns:FornecedorNotaManual" />
+            <s:element minOccurs="0" maxOccurs="1" name="itens" type="tns:ArrayOfPedidoItens" />
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FornecedorNotaManual">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Fornecedor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FornecedorJuridico" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNPJFilial" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Recebimento" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValidaPedido" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNPJFornecedorJuridico" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorInformado" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataEmissao" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Erro" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Filial" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PedidoFornecedor" type="tns:ArrayOfPedidoFornecedor" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPedidoFornecedor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PedidoFornecedor" nillable="true" type="tns:PedidoFornecedor" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PedidoFornecedor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Fornecedor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataPedido" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataJuliana" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SequenciaJuliana" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Situacao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Filial" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPedidoItens">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PedidoItens" nillable="true" type="tns:PedidoItens" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PedidoItens">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoProduto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeAtendida" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoBarras" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoBarra" type="tns:ArrayOfProdutoCodigoBarra" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeEmbalagemExpedicao" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermiteMultiplicador" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorUnitario" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProdutoCodigoBarra">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProdutoCodigoBarra" nillable="true" type="tns:ProdutoCodigoBarra" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProdutoCodigoBarra">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoBarras" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoProduto" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Interno" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Padrao" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistraRomaneioPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraRomaneioPedidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraRomaneio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nota" type="tns:NotaFiscalManual" />
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NotaFiscalManual">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FornecedorNotaManual" type="tns:FornecedorNotaManual" />
+          <s:element minOccurs="0" maxOccurs="1" name="NegociacaoProduto" type="tns:ArrayOfNegociacaoProduto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNegociacaoProduto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NegociacaoProduto" nillable="true" type="tns:NegociacaoProduto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NegociacaoProduto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoBarras" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoProduto" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorUnitario" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Erro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistraRomaneioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraRomaneioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarDevolucao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="devolucao" type="tns:Devolucao" />
+            <s:element minOccurs="0" maxOccurs="1" name="devolucaoItem" type="tns:ArrayOfDevolucaoItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Devolucao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnoDiadoAno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SequencialAnoDiadoAno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFornecedorJuridico" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeFornecedorJuridico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CnpjFornecedorJuridico" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoPedido" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDevolucaoItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DevolucaoItem" nillable="true" type="tns:DevolucaoItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DevolucaoItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoBarras" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoProduto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtdEstoque" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Erro" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdDevolucao" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarDevolucaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarDevolucaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaProdutoDevolucao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoBarra" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="filial" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDevolucao" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaProdutoDevolucaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaProdutoDevolucaoResult" type="tns:DevolucaoItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarDevolucao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="filial" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarDevolucaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornarDevolucaoResult" type="tns:ArrayOfDevolucao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDevolucao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Devolucao" nillable="true" type="tns:Devolucao" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistraNFManualPedidoDataJuliana">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nota" type="tns:FornecedorNotaManual" />
+            <s:element minOccurs="0" maxOccurs="1" name="itens" type="tns:ArrayOfPedidoItens" />
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataJuliana" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sequencialJuliana" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraNFManualPedidoDataJulianaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraNFManualPedidoDataJulianaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraNFManualPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nota" type="tns:FornecedorNotaManual" />
+            <s:element minOccurs="0" maxOccurs="1" name="itens" type="tns:ArrayOfPedidoItens" />
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraNFManualPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraNFManualPedidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaPedidoItens">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dataJuliana" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sequencia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="filial" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaPedidoItensResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaPedidoItensResult" type="tns:Pedido" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Pedido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PedidoItens" type="tns:ArrayOfPedidoItens" />
+          <s:element minOccurs="0" maxOccurs="1" name="erro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistraNFManual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nota" type="tns:NotaFiscalManual" />
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraNFManualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraNFManualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaProdutoRomaneio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoBarra" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fornecedor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="filial" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaProdutoRomaneioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaProdutoRomaneioResult" type="tns:NegociacaoProduto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaProduto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoBarra" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fornecedor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="filial" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaProdutoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaProdutoResult" type="tns:NegociacaoProduto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaFornecedorJuridico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cnpj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaFornecedorJuridicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetornaFornecedorJuridicoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaFornecedorJuridicoControladora">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fornecedor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaFornecedorJuridicoControladoraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaFornecedorJuridicoControladoraResult" type="tns:ArrayOfFornecedorJuridico" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFornecedorJuridico">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FornecedorJuridico" nillable="true" type="tns:FornecedorJuridico" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FornecedorJuridico">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnpj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="razao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fantasia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="erro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetornaFornecedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fornecedorGestao" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fornecedorFilial" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaFornecedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaFornecedorResult" type="tns:FornecedorNotaManual" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraNFe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nfe" type="tns:Nfe" />
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Nfe">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChaveAcessoNfe" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Filial" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilialNome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Situacao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CnpjEmissor" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CnpjDestinatario" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Erro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Divergencias" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotaFiscalEntrada" type="tns:NotaFiscalEntrada" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataEmissao" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TemXML" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotaFiscalEntrada">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CnpjFornecedor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CnpjCpf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotaFiscalEntradaItem" type="tns:ArrayOfNotaFiscalEntradaItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigosBarra" type="tns:ArrayOfProdutoCodigoBarra" />
+          <s:element minOccurs="1" maxOccurs="1" name="FornecedorJuridico" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNotaFiscalEntradaItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NotaFiscalEntradaItem" nillable="true" type="tns:NotaFiscalEntradaItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotaFiscalEntradaItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoProduto" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DigitoVerificador" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeBonificada" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeEmbalagemExpedicao" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermiteMultiplicador" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorUnitario" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fornecedor" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistraNFeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraNFeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaFluxoSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaFluxoSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaFluxoSAPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaNFe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chaveAcesso" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaNFeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaNFeResult" type="tns:Nfe" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutenticarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutenticarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutenticarUsuarioResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Usuario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataHora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AlterarConfiguracao" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Erro" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Filial" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AutenticarUsuarioComIp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipColetor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutenticarUsuarioComIpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutenticarUsuarioComIpResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarDownloadNFePorLoja">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chaveAcessoNFe" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="filial" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarDownloadNFePorLojaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarDownloadNFePorLojaResult" type="tns:DownloadXMlNFe" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DownloadXMlNFe">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ChaveAcessoNFe" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNPJDestinatario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DownloadOK" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgRetorno" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RealizarDownloadNFePorCNPJ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chaveAcessoNFe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cnpjDestinatario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarDownloadNFePorCNPJResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarDownloadNFePorCNPJResult" type="tns:DownloadXMlNFe" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VerificaConexaoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaConexao" />
+  </wsdl:message>
+  <wsdl:message name="VerificaConexaoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaConexaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaVersaoEDLColetorSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaVersaoEDLColetor" />
+  </wsdl:message>
+  <wsdl:message name="RetornaVersaoEDLColetorSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaVersaoEDLColetorResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaVersaoEDLAtualizaVersaoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaVersaoEDLAtualizaVersao" />
+  </wsdl:message>
+  <wsdl:message name="RetornaVersaoEDLAtualizaVersaoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaVersaoEDLAtualizaVersaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnviaAtualizadorNovoSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviaAtualizadorNovo" />
+  </wsdl:message>
+  <wsdl:message name="EnviaAtualizadorNovoSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviaAtualizadorNovoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogRecusaSemNFeSoapIn">
+    <wsdl:part name="parameters" element="tns:LogRecusaSemNFe" />
+  </wsdl:message>
+  <wsdl:message name="LogRecusaSemNFeSoapOut">
+    <wsdl:part name="parameters" element="tns:LogRecusaSemNFeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogRecusaNFeSoapIn">
+    <wsdl:part name="parameters" element="tns:LogRecusaNFe" />
+  </wsdl:message>
+  <wsdl:message name="LogRecusaNFeSoapOut">
+    <wsdl:part name="parameters" element="tns:LogRecusaNFeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraRomaneioPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraRomaneioPedido" />
+  </wsdl:message>
+  <wsdl:message name="RegistraRomaneioPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraRomaneioPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraRomaneioSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraRomaneio" />
+  </wsdl:message>
+  <wsdl:message name="RegistraRomaneioSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraRomaneioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDevolucaoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarDevolucao" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDevolucaoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarDevolucaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaProdutoDevolucaoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaProdutoDevolucao" />
+  </wsdl:message>
+  <wsdl:message name="RetornaProdutoDevolucaoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaProdutoDevolucaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornarDevolucaoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornarDevolucao" />
+  </wsdl:message>
+  <wsdl:message name="RetornarDevolucaoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornarDevolucaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraNFManualPedidoDataJulianaSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraNFManualPedidoDataJuliana" />
+  </wsdl:message>
+  <wsdl:message name="RegistraNFManualPedidoDataJulianaSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraNFManualPedidoDataJulianaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraNFManualPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraNFManualPedido" />
+  </wsdl:message>
+  <wsdl:message name="RegistraNFManualPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraNFManualPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaPedidoItensSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaPedidoItens" />
+  </wsdl:message>
+  <wsdl:message name="RetornaPedidoItensSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaPedidoItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraNFManualSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraNFManual" />
+  </wsdl:message>
+  <wsdl:message name="RegistraNFManualSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraNFManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaProdutoRomaneioSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaProdutoRomaneio" />
+  </wsdl:message>
+  <wsdl:message name="RetornaProdutoRomaneioSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaProdutoRomaneioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaProdutoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaProduto" />
+  </wsdl:message>
+  <wsdl:message name="RetornaProdutoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaFornecedorJuridicoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaFornecedorJuridico" />
+  </wsdl:message>
+  <wsdl:message name="RetornaFornecedorJuridicoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaFornecedorJuridicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaFornecedorJuridicoControladoraSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaFornecedorJuridicoControladora" />
+  </wsdl:message>
+  <wsdl:message name="RetornaFornecedorJuridicoControladoraSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaFornecedorJuridicoControladoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaFornecedorSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaFornecedor" />
+  </wsdl:message>
+  <wsdl:message name="RetornaFornecedorSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraNFeSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraNFe" />
+  </wsdl:message>
+  <wsdl:message name="RegistraNFeSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraNFeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaFluxoSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaFluxoSAP" />
+  </wsdl:message>
+  <wsdl:message name="RetornaFluxoSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaFluxoSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaNFeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaNFe" />
+  </wsdl:message>
+  <wsdl:message name="RetornaNFeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaNFeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:AutenticarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarUsuarioComIpSoapIn">
+    <wsdl:part name="parameters" element="tns:AutenticarUsuarioComIp" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarUsuarioComIpSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticarUsuarioComIpResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarDownloadNFePorLojaSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarDownloadNFePorLoja" />
+  </wsdl:message>
+  <wsdl:message name="RealizarDownloadNFePorLojaSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarDownloadNFePorLojaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarDownloadNFePorCNPJSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarDownloadNFePorCNPJ" />
+  </wsdl:message>
+  <wsdl:message name="RealizarDownloadNFePorCNPJSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarDownloadNFePorCNPJResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EDLWSSoap">
+    <wsdl:operation name="VerificaConexao">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna OK para validar conexão com o coletor.</wsdl:documentation>
+      <wsdl:input message="tns:VerificaConexaoSoapIn" />
+      <wsdl:output message="tns:VerificaConexaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaVersaoEDLColetor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna a versão do aplicativo do coletor.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaVersaoEDLColetorSoapIn" />
+      <wsdl:output message="tns:RetornaVersaoEDLColetorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaVersaoEDLAtualizaVersao">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna a versão do aplicativo de atualização do coletor.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaVersaoEDLAtualizaVersaoSoapIn" />
+      <wsdl:output message="tns:RetornaVersaoEDLAtualizaVersaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviaAtualizadorNovo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método envia a última versão disponível do sistema de atualização do EDL Coletor com verificação de tamanho.</wsdl:documentation>
+      <wsdl:input message="tns:EnviaAtualizadorNovoSoapIn" />
+      <wsdl:output message="tns:EnviaAtualizadorNovoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogRecusaSemNFe">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método cria o log de recusa sem notas fiscais.</wsdl:documentation>
+      <wsdl:input message="tns:LogRecusaSemNFeSoapIn" />
+      <wsdl:output message="tns:LogRecusaSemNFeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogRecusaNFe">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método cria o log de recusa de notas fiscais.</wsdl:documentation>
+      <wsdl:input message="tns:LogRecusaNFeSoapIn" />
+      <wsdl:output message="tns:LogRecusaNFeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraRomaneioPedido">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método registra os itens da nota fiscal manual com romaneio e pedido e atualiza o estoque.</wsdl:documentation>
+      <wsdl:input message="tns:RegistraRomaneioPedidoSoapIn" />
+      <wsdl:output message="tns:RegistraRomaneioPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraRomaneio">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método registra os itens da nota fiscal manual com romaneio e atualiza o estoque.</wsdl:documentation>
+      <wsdl:input message="tns:RegistraRomaneioSoapIn" />
+      <wsdl:output message="tns:RegistraRomaneioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDevolucao">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método grava os itens de devolucao.</wsdl:documentation>
+      <wsdl:input message="tns:RegistrarDevolucaoSoapIn" />
+      <wsdl:output message="tns:RegistrarDevolucaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProdutoDevolucao">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna os dados do produto a ser devolvido.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaProdutoDevolucaoSoapIn" />
+      <wsdl:output message="tns:RetornaProdutoDevolucaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarDevolucao">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna os pedidos de devolução. </wsdl:documentation>
+      <wsdl:input message="tns:RetornarDevolucaoSoapIn" />
+      <wsdl:output message="tns:RetornarDevolucaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManualPedidoDataJuliana">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método registra os itens da nota fiscal manual com pedido e atualiza o estoque. Passa como parametro dataJuliana</wsdl:documentation>
+      <wsdl:input message="tns:RegistraNFManualPedidoDataJulianaSoapIn" />
+      <wsdl:output message="tns:RegistraNFManualPedidoDataJulianaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManualPedido">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método registra os itens da nota fiscal manual com pedido e atualiza o estoque.</wsdl:documentation>
+      <wsdl:input message="tns:RegistraNFManualPedidoSoapIn" />
+      <wsdl:output message="tns:RegistraNFManualPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaPedidoItens">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método registra os itens da nota fiscal manual e atualiza o estoque.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaPedidoItensSoapIn" />
+      <wsdl:output message="tns:RetornaPedidoItensSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManual">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método registra os itens da nota fiscal manual e atualiza o estoque.</wsdl:documentation>
+      <wsdl:input message="tns:RegistraNFManualSoapIn" />
+      <wsdl:output message="tns:RegistraNFManualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProdutoRomaneio">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna dados do produto.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaProdutoRomaneioSoapIn" />
+      <wsdl:output message="tns:RetornaProdutoRomaneioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProduto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna dados do produto.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaProdutoSoapIn" />
+      <wsdl:output message="tns:RetornaProdutoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedorJuridico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna o fornecedor juridico.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaFornecedorJuridicoSoapIn" />
+      <wsdl:output message="tns:RetornaFornecedorJuridicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedorJuridicoControladora">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna o fornecedor juridico.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaFornecedorJuridicoControladoraSoapIn" />
+      <wsdl:output message="tns:RetornaFornecedorJuridicoControladoraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna configurações do fornecedor para nota fiscal manual.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaFornecedorSoapIn" />
+      <wsdl:output message="tns:RetornaFornecedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFe">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna dados da nota fiscal eletronica.</wsdl:documentation>
+      <wsdl:input message="tns:RegistraNFeSoapIn" />
+      <wsdl:output message="tns:RegistraNFeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFluxoSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método verifical se o fluxo SAP está ativo</wsdl:documentation>
+      <wsdl:input message="tns:RetornaFluxoSAPSoapIn" />
+      <wsdl:output message="tns:RetornaFluxoSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaNFe">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna dados da nota fiscal eletronica.</wsdl:documentation>
+      <wsdl:input message="tns:RetornaNFeSoapIn" />
+      <wsdl:output message="tns:RetornaNFeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna autenticação de usuário.</wsdl:documentation>
+      <wsdl:input message="tns:AutenticarUsuarioSoapIn" />
+      <wsdl:output message="tns:AutenticarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarUsuarioComIp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método retorna autenticação de usuário pelo ip do coletor.</wsdl:documentation>
+      <wsdl:input message="tns:AutenticarUsuarioComIpSoapIn" />
+      <wsdl:output message="tns:AutenticarUsuarioComIpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarDownloadNFePorLoja">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método realiza o download do arquivo xml da NFe a partir da chave de acesso e o codigo da filial.</wsdl:documentation>
+      <wsdl:input message="tns:RealizarDownloadNFePorLojaSoapIn" />
+      <wsdl:output message="tns:RealizarDownloadNFePorLojaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarDownloadNFePorCNPJ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Este método realiza o download do arquivo xml da NFe a partir da chave de acesso e o cnpj do destinatario.</wsdl:documentation>
+      <wsdl:input message="tns:RealizarDownloadNFePorCNPJSoapIn" />
+      <wsdl:output message="tns:RealizarDownloadNFePorCNPJSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EDLWSSoap" type="tns:EDLWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificaConexao">
+      <soap:operation soapAction="http://tempuri.org/VerificaConexao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaVersaoEDLColetor">
+      <soap:operation soapAction="http://tempuri.org/RetornaVersaoEDLColetor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaVersaoEDLAtualizaVersao">
+      <soap:operation soapAction="http://tempuri.org/RetornaVersaoEDLAtualizaVersao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviaAtualizadorNovo">
+      <soap:operation soapAction="http://tempuri.org/EnviaAtualizadorNovo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogRecusaSemNFe">
+      <soap:operation soapAction="http://tempuri.org/LogRecusaSemNFe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogRecusaNFe">
+      <soap:operation soapAction="http://tempuri.org/LogRecusaNFe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraRomaneioPedido">
+      <soap:operation soapAction="http://tempuri.org/RegistraRomaneioPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraRomaneio">
+      <soap:operation soapAction="http://tempuri.org/RegistraRomaneio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDevolucao">
+      <soap:operation soapAction="http://tempuri.org/RegistrarDevolucao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProdutoDevolucao">
+      <soap:operation soapAction="http://tempuri.org/RetornaProdutoDevolucao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarDevolucao">
+      <soap:operation soapAction="http://tempuri.org/RetornarDevolucao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManualPedidoDataJuliana">
+      <soap:operation soapAction="http://tempuri.org/RegistraNFManualPedidoDataJuliana" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManualPedido">
+      <soap:operation soapAction="http://tempuri.org/RegistraNFManualPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaPedidoItens">
+      <soap:operation soapAction="http://tempuri.org/RetornaPedidoItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManual">
+      <soap:operation soapAction="http://tempuri.org/RegistraNFManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProdutoRomaneio">
+      <soap:operation soapAction="http://tempuri.org/RetornaProdutoRomaneio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProduto">
+      <soap:operation soapAction="http://tempuri.org/RetornaProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedorJuridico">
+      <soap:operation soapAction="http://tempuri.org/RetornaFornecedorJuridico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedorJuridicoControladora">
+      <soap:operation soapAction="http://tempuri.org/RetornaFornecedorJuridicoControladora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedor">
+      <soap:operation soapAction="http://tempuri.org/RetornaFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFe">
+      <soap:operation soapAction="http://tempuri.org/RegistraNFe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFluxoSAP">
+      <soap:operation soapAction="http://tempuri.org/RetornaFluxoSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaNFe">
+      <soap:operation soapAction="http://tempuri.org/RetornaNFe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarUsuario">
+      <soap:operation soapAction="http://tempuri.org/AutenticarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarUsuarioComIp">
+      <soap:operation soapAction="http://tempuri.org/AutenticarUsuarioComIp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarDownloadNFePorLoja">
+      <soap:operation soapAction="http://tempuri.org/RealizarDownloadNFePorLoja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarDownloadNFePorCNPJ">
+      <soap:operation soapAction="http://tempuri.org/RealizarDownloadNFePorCNPJ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EDLWSSoap12" type="tns:EDLWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificaConexao">
+      <soap12:operation soapAction="http://tempuri.org/VerificaConexao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaVersaoEDLColetor">
+      <soap12:operation soapAction="http://tempuri.org/RetornaVersaoEDLColetor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaVersaoEDLAtualizaVersao">
+      <soap12:operation soapAction="http://tempuri.org/RetornaVersaoEDLAtualizaVersao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviaAtualizadorNovo">
+      <soap12:operation soapAction="http://tempuri.org/EnviaAtualizadorNovo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogRecusaSemNFe">
+      <soap12:operation soapAction="http://tempuri.org/LogRecusaSemNFe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogRecusaNFe">
+      <soap12:operation soapAction="http://tempuri.org/LogRecusaNFe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraRomaneioPedido">
+      <soap12:operation soapAction="http://tempuri.org/RegistraRomaneioPedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraRomaneio">
+      <soap12:operation soapAction="http://tempuri.org/RegistraRomaneio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDevolucao">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarDevolucao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProdutoDevolucao">
+      <soap12:operation soapAction="http://tempuri.org/RetornaProdutoDevolucao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarDevolucao">
+      <soap12:operation soapAction="http://tempuri.org/RetornarDevolucao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManualPedidoDataJuliana">
+      <soap12:operation soapAction="http://tempuri.org/RegistraNFManualPedidoDataJuliana" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManualPedido">
+      <soap12:operation soapAction="http://tempuri.org/RegistraNFManualPedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaPedidoItens">
+      <soap12:operation soapAction="http://tempuri.org/RetornaPedidoItens" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFManual">
+      <soap12:operation soapAction="http://tempuri.org/RegistraNFManual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProdutoRomaneio">
+      <soap12:operation soapAction="http://tempuri.org/RetornaProdutoRomaneio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaProduto">
+      <soap12:operation soapAction="http://tempuri.org/RetornaProduto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedorJuridico">
+      <soap12:operation soapAction="http://tempuri.org/RetornaFornecedorJuridico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedorJuridicoControladora">
+      <soap12:operation soapAction="http://tempuri.org/RetornaFornecedorJuridicoControladora" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFornecedor">
+      <soap12:operation soapAction="http://tempuri.org/RetornaFornecedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraNFe">
+      <soap12:operation soapAction="http://tempuri.org/RegistraNFe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaFluxoSAP">
+      <soap12:operation soapAction="http://tempuri.org/RetornaFluxoSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaNFe">
+      <soap12:operation soapAction="http://tempuri.org/RetornaNFe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/AutenticarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarUsuarioComIp">
+      <soap12:operation soapAction="http://tempuri.org/AutenticarUsuarioComIp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarDownloadNFePorLoja">
+      <soap12:operation soapAction="http://tempuri.org/RealizarDownloadNFePorLoja" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarDownloadNFePorCNPJ">
+      <soap12:operation soapAction="http://tempuri.org/RealizarDownloadNFePorCNPJ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EDLWS">
+    <wsdl:port name="EDLWSSoap" binding="tns:EDLWSSoap">
+      <soap:address location="http://172.17.41.64/edl_web/WS/EDLWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EDLWSSoap12" binding="tns:EDLWSSoap12">
+      <soap12:address location="http://172.17.41.64/edl_web/WS/EDLWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

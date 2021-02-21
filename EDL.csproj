@@ -1,0 +1,370 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FD3B10C-C6D1-40BA-B941-3F9D3D6156C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EDL</RootNamespace>
+    <AssemblyName>EDL</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>EDL</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <DeployDirPrefix>\</DeployDirPrefix>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>EDL.Program</StartupObject>
+    <ApplicationIcon>cbhh.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Symbol, Version=2.5.0.3, Culture=neutral, PublicKeyToken=68ec8db391f150ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Symbol.dll</HintPath>
+    </Reference>
+    <Reference Include="Symbol.Barcode, Version=2.7.0.2, Culture=neutral, PublicKeyToken=68ec8db391f150ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Symbol.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Symbol.BarcodeForms, Version=2.7.0.2, Culture=neutral, PublicKeyToken=68ec8db391f150ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Symbol.BarcodeForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracao.Designer.cs">
+      <DependentUpon>Configuracao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\BarraInferior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\BarraInferior.Designer.cs">
+      <DependentUpon>BarraInferior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\BarraSuperior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\BarraSuperior.Designer.cs">
+      <DependentUpon>BarraSuperior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devolucao.Designer.cs">
+      <DependentUpon>Devolucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevolucaoItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevolucaoItem.Designer.cs">
+      <DependentUpon>DevolucaoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Divergencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Divergencias.Designer.cs">
+      <DependentUpon>Divergencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dominio\Enumeradores\Enum.cs" />
+    <Compile Include="Dominio\Usuario.cs" />
+    <Compile Include="Fornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor.Designer.cs">
+      <DependentUpon>Fornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NFe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NFe.Designer.cs">
+      <DependentUpon>NFe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fundo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fundo.Designer.cs">
+      <DependentUpon>Fundo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NFeItens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NFeItens.Designer.cs">
+      <DependentUpon>NFeItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NFManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NFManual.Designer.cs">
+      <DependentUpon>NFManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NFManualItens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NFManualItens.Designer.cs">
+      <DependentUpon>NFManualItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosItens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosItens.Designer.cs">
+      <DependentUpon>PedidosItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Configuracao.resx">
+      <DependentUpon>Configuracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\BarraInferior.resx">
+      <DependentUpon>BarraInferior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\BarraSuperior.resx">
+      <DependentUpon>BarraSuperior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devolucao.resx">
+      <DependentUpon>Devolucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevolucaoItem.resx">
+      <DependentUpon>DevolucaoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Divergencias.resx">
+      <DependentUpon>Divergencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedor.resx">
+      <DependentUpon>Fornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NFe.resx">
+      <DependentUpon>NFe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fundo.resx">
+      <DependentUpon>Fundo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NFeItens.resx">
+      <DependentUpon>NFeItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NFManual.resx">
+      <DependentUpon>NFManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NFManualItens.resx">
+      <DependentUpon>NFManualItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosItens.resx">
+      <DependentUpon>PedidosItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Romaneio.resx">
+      <DependentUpon>Romaneio.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Romaneio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Romaneio.designer.cs">
+      <DependentUpon>Romaneio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Bateria.cs" />
+    <Compile Include="Util\Coletor.cs" />
+    <Compile Include="Util\Conversor.cs" />
+    <Compile Include="Util\Credencial.cs" />
+    <Compile Include="Util\DataHora.cs" />
+    <Compile Include="Util\HashMD5.cs" />
+    <Compile Include="Util\LerGravarXML.cs" />
+    <Compile Include="Util\LogErro.cs" />
+    <Compile Include="Util\LogRecusaNF.cs" />
+    <Compile Include="Util\MostraCursor.cs" />
+    <Compile Include="Util\Numerico.cs" />
+    <Compile Include="Util\PastaSistema.cs" />
+    <Compile Include="Util\PingLib.cs" />
+    <Compile Include="Util\Processos.cs" />
+    <Compile Include="Util\TelaCheia.cs" />
+    <Compile Include="Util\Validacoes.cs" />
+    <Compile Include="Util\Versao.cs" />
+    <Compile Include="Web References\EDLWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drogariaaraujo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control panel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bateria_1.gif" />
+    <None Include="Resources\bateria_2.gif" />
+    <None Include="Resources\bateria_3.gif" />
+    <None Include="Resources\bateria_4.gif" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\barra.png" />
+    <None Include="Resources\barra2.png" />
+    <None Include="Resources\vermelho.gif" />
+    <None Include="Resources\verde.gif" />
+    <None Include="Resources\button_cancel.png" />
+    <None Include="Resources\button_ok.png" />
+    <None Include="Resources\devolucao.png" />
+    <None Include="Resources\entrada.png" />
+    <None Include="Resources\Aberto.GIF" />
+    <None Include="Resources\PorAbrir.GIF" />
+    <None Include="Web References\EDLWS\Devolucao1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\DevolucaoItem1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\DownloadXMlNFe1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\EDLWS.wsdl" />
+    <None Include="Web References\EDLWS\FornecedorJuridico1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\FornecedorNotaManual1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\NegociacaoProduto1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\Nfe.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\Pedido1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="cbhh.ico" />
+    <Content Include="SCANWEDGE.EXE" />
+    <None Include="Web References\EDLWS\EDLWS.disco" />
+    <None Include="Web References\EDLWS\Usuario1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDLWS\VersaoEDL.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.17.41.64/edl_web/WS/EDLWS.asmx">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\EDLWS\</RelPath>
+      <UpdateFromURL>http://172.17.41.64/edl_web/WS/EDLWS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="drogariaaraujo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drogariaaraujo.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\verde.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vermelho.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fundologin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image3.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Control_panel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Control panel2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Key.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MSGA001" xml:space="preserve">
+    <value>É necessário bipar o crachá.</value>
+  </data>
+  <data name="MSGI001" xml:space="preserve">
+    <value>Recebimento concluído com sucesso!</value>
+  </data>
+  <data name="barra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barra.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barra2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barra2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bateria_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bateria_1.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bateria_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bateria_2.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bateria_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bateria_3.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bateria_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bateria_4.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SYS001" xml:space="preserve">
+    <value>Não efetuou a leitura do crachá!</value>
+  </data>
+  <data name="SYS002" xml:space="preserve">
+    <value>É obrigatório informar uma senha para acessar no sistema!</value>
+  </data>
+  <data name="button_cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_cancel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_ok.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="devolucao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\devolucao.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="entrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\entrada.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MSGA002" xml:space="preserve">
+    <value>Produto não foi identificado no documento e não pode ser recebido.</value>
+  </data>
+  <data name="MSGA003" xml:space="preserve">
+    <value>Quantidade informada é diferente da quantidade do documento.</value>
+  </data>
+  <data name="MSGA006" xml:space="preserve">
+    <value>Quantidade informada é maior que a quantidade do documento.</value>
+  </data>
+  <data name="MSGC001" xml:space="preserve">
+    <value>Existem produtos no documento que não foram bipados. </value>
+  </data>
+  <data name="MSGE002" xml:space="preserve">
+    <value>Nota Fiscal não pode ser recebida nesta filial por pertencer à filial</value>
+  </data>
+  <data name="MSGE003" xml:space="preserve">
+    <value>Nota Fiscal bloqueada para recebimento.</value>
+  </data>
+  <data name="MSGE004" xml:space="preserve">
+    <value>Nota Fiscal não encontrada no Sistema. Não é possível realizar o recebimento.</value>
+  </data>
+  <data name="SYS003" xml:space="preserve">
+    <value>Nota Fiscal já foi recebida.</value>
+  </data>
+  <data name="SYS004" xml:space="preserve">
+    <value>Nota Fiscal é de devolução.</value>
+  </data>
+  <data name="SYS005" xml:space="preserve">
+    <value>É necessário informar todos os campos da chave de acesso.</value>
+  </data>
+  <data name="Aberto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aberto.GIF;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PorAbrir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PorAbrir.GIF;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SYS999" xml:space="preserve">
+    <value>Ocorreu quebra de conexão ou inconsistência de dados, não foi possível concluir o processamento: </value>
+  </data>
+  <data name="SYS006" xml:space="preserve">
+    <value>Produto já foi bipado.</value>
+  </data>
+  <data name="SYS007" xml:space="preserve">
+    <value>Não foi possível registrar os ítens da nota fiscal devido à queda de conexão com o servidor principal.</value>
+  </data>
+  <data name="MSGA004" xml:space="preserve">
+    <value>Produto não identificado no pedido e não pode ser recebido.</value>
+  </data>
+  <data name="MSGA005" xml:space="preserve">
+    <value>Quantidade bipada ultrapassou a quantidade do pedido e o excedente não pode ser recebido.</value>
+  </data>
+  <data name="MSGE005" xml:space="preserve">
+    <value>Não é possível realizar o recebimento deste fornecedor sem NF-e.</value>
+  </data>
+  <data name="MSGE006" xml:space="preserve">
+    <value>Fornecedor não cadastrado no sistema. Não é possível realizar este recebimento.</value>
+  </data>
+  <data name="MSGE007" xml:space="preserve">
+    <value>Não existe pedido para este fornecedor. Recebimento não permitido.</value>
+  </data>
+  <data name="MSGI006" xml:space="preserve">
+    <value>Produto # não existe no mix da filial e não pode ser recebido.</value>
+  </data>
+  <data name="SYS008" xml:space="preserve">
+    <value>Não foi possível encontrar informações da filial.</value>
+  </data>
+  <data name="SYS009" xml:space="preserve">
+    <value>É necessário informar todos os dados da nota fiscal.</value>
+  </data>
+  <data name="SYS010" xml:space="preserve">
+    <value>Já existem itens lançados. Se voltar, terá que recomeçar. Confirma?</value>
+  </data>
+  <data name="SYS011" xml:space="preserve">
+    <value>Valor total da nota está maior que o valor negociado.</value>
+  </data>
+  <data name="SYS012" xml:space="preserve">
+    <value>Para acessar as Configurações, é necessário bipar o crachá e informar a senha.</value>
+  </data>
+  <data name="SYS013" xml:space="preserve">
+    <value>Não tem permissão para acessar a janela de Configurações.</value>
+  </data>
+  <data name="MSGA008" xml:space="preserve">
+    <value>Produto # não tem a quantidade bipada em estoque para esta filial.</value>
+  </data>
+  <data name="SYS014" xml:space="preserve">
+    <value>Produto # não tem quantidade em estoque para esta filial.</value>
+  </data>
+  <data name="SYS015" xml:space="preserve">
+    <value>Não foi possível registrar os ítens da devolução devido à queda de conexão com o servidor principal.</value>
+  </data>
+  <data name="SYS016" xml:space="preserve">
+    <value>Não existem ítens bipados.</value>
+  </data>
+  <data name="SYS017" xml:space="preserve">
+    <value>O pedido bipado não está na relação.</value>
+  </data>
+  <data name="SYS018" xml:space="preserve">
+    <value>É necessário informar todos os dados do romaneio.</value>
+  </data>
+  <data name="SYS998" xml:space="preserve">
+    <value>Não foi possível conectar com servidor, verifique rede ou endereço de conexão.</value>
+  </data>
+  <data name="SYS019" xml:space="preserve">
+    <value>Nota recusada por divergência no recebimento.</value>
+  </data>
+  <data name="SYS020" xml:space="preserve">
+    <value>Nota recusada por inconsistência.</value>
+  </data>
+  <data name="SYS021" xml:space="preserve">
+    <value>Recebimento da nota cancelado pelo operador.</value>
+  </data>
+  <data name="MSGI002" xml:space="preserve">
+    <value>Devolução concluída com sucesso!</value>
+  </data>
+  <data name="SYS022" xml:space="preserve">
+    <value>O código bipado não corresponde ao código do fornecedor.</value>
+  </data>
+  <data name="SYS023" xml:space="preserve">
+    <value>Nota Fiscal está no sistema, mas ainda não foi liberada para recebimento.</value>
+  </data>
+  <data name="MSGA009" xml:space="preserve">
+    <value>O xml da NFe não foi enviado. Deseja realizar o download do xml dessa Nota?</value>
+  </data>
+  <data name="MSGI003" xml:space="preserve">
+    <value>Download finalizado. Aguarde dois minutos para bipar a nota novamente.</value>
+  </data>
+  <data name="SYS024" xml:space="preserve">
+    <value>Existe uma nova versão do aplicativo atualizador do EDL, deseja acessar as configurações para iniciar a atualização?</value>
+  </data>
+</root>
